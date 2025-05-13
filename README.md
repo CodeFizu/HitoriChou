@@ -38,7 +38,7 @@ It uses charts and summaries to make finance management intuitive.
 
 - firebase-config.js を設定（サンプルを参考に）
 
-- ブラウザで index.html を開く
+- ブラウザで settings.html を開く
 - または VS Code の Live Server を使って実行
 
 ---
