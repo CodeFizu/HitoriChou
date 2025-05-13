@@ -30,7 +30,16 @@ It uses charts and summaries to make finance management intuitive.
 
 ### ⚙️ 設定ページ (Settings)
 - ユーザー登録・ログイン・ログアウト機能  
-- 「ログイン」「サインアップ」「ログアウト」ボタン  
+- 「ログイン」「サインアップ」「ログアウト」ボタン
+
+### 🧪 実行方法 | Run Locally
+- リポジトリをクローン
+- git clone https://github.com/your-username/hitori-cho.git
+
+- firebase-config.js を設定（サンプルを参考に）
+
+- ブラウザで index.html を開く
+- または VS Code の Live Server を使って実行
 
 ---
 
