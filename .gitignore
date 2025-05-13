@@ -1,0 +1,14 @@
+# Firebase service accounts or backend secrets
+*.key
+*.json
+*.pem
+
+# If you split config into a separate file (optional)
+firebase-config.js
+
+# Node packages (if using npm)
+node_modules/
+
+# Mac/IDE stuff (optional)
+.DS_Store
+.vscode/

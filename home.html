@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ホーム | ひとり帳</title>
+    <link rel="stylesheet" href="styles/styles.css" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <h1>ひとり帳</h1>
+        <nav>
+          <ul>
+            <li><a href="home.html">ホーム</a></li>
+            <li><a href="dashboard.html">一覧</a></li>
+            <li><a href="transactions.html">取引</a></li>
+            <li><a href="settings.html">設定</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="dashboard">
+        <div class="container">
+          <div class="overview">
+            <h2>概要</h2>
+            <!-- Overview -->
+            <div class="overview-stats">
+              <div class="stat-box">
+                <h3>今月の総収入</h3>
+                <p id="totalIncome">¥0</p> 
+              </div>
+              <div class="stat-box">
+                <h3>今月の総支出</h3>
+                <p id="totalExpense">¥0</p> 
+              </div>
+            </div>
+            <div class="stat-box">
+              <h3>現在の貯金</h3>
+              <p id="totalSavings">¥0</p> 
+            </div>
+          </div>
+
+          <div class="charts-container">
+            <div class="chart">
+              <h2>支出内訳</h2>
+              <canvas id="expenseChart"></canvas>
+            </div>
+
+            <div class="chart">
+              <h2>収入内訳</h2>
+              <canvas id="incomeChart"></canvas>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="container">
+        <p>&copy; 2025 ひとり帳 | All Rights Reserved</p>
+      </div>
+    </footer>
+
+    <script src="firebase-config.js"></script>
+    <script type="module" src="scripts/home.js"></script>
+  </body>
+</html>

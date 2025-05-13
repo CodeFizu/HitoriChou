@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>設定 | ひとり帳</title>
+    <link rel="stylesheet" href="styles/styles.css" />
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <h1>ひとり帳</h1>
+        <nav>
+          <ul>
+            <li><a href="home.html">ホーム</a></li>
+            <li><a href="dashboard.html">一覧</a></li>
+            <li><a href="transactions.html">取引</a></li>
+            <li><a href="settings.html">設定</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <!-- Sign Up Form -->
+      <section class="signUp-settings">
+        <div class="container">
+          <h2>会員登録</h2>
+          <form id="signUpForm">
+            <label for="email">メール</label>
+            <input type="text" id="email" required />
+            <label for="username">ユーザー名</label>
+            <input type="text" id="username" required />
+            <label for="password">パスワード（６文字以上）</label>
+            <input type="password" id="password" required />
+
+            <button type="submit">登録</button>
+          </form>
+        </div>
+      </section>
+
+      <!-- Sign In Form -->
+      <section class="signIn-settings">
+        <div class="container">
+          <h2>ログイン</h2>
+          <form id="loginForm">
+            <label for="loginEmail">メール</label>
+            <input type="email" id="loginEmail" required />
+
+            <label for="loginPassword">パスワード</label>
+            <input type="password" id="loginPassword" required />
+
+            <button type="submit">ログイン</button>
+          </form>
+        </div>
+      </section>
+
+      <!-- Log Out Form -->
+      <section class="logOut-settings" style="display: none">
+        <div class="container">
+          <button id="logOutButton">ログアウト</button>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="container">
+        <p>&copy; 2025 ひとり帳 | All Rights Reserved</p>
+      </div>
+    </footer>
+
+    <script src="firebase-config.js"></script>
+    <script type="module" src="scripts/settings.js"></script>
+  </body>
+</html>

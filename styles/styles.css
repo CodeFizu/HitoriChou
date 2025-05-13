@@ -1,0 +1,683 @@
+@import url("https://fonts.googleapis.com/css?family=Noto+Sans+JP");
+
+/* =======================
+   Global Styles
+   ======================== */
+
+/* Reset some default styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* General layout */
+body {
+  font-family: "Noto Sans JP", sans-serif;
+  background-color: #333;
+  color: #333;
+  margin: 0;
+  padding: 0;
+}
+
+/* Container styling to centralize content */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem; /* Adds a little spacing from the sides */
+}
+
+/* Header styles */
+header {
+  background-color: #333333;
+  padding: 1rem;
+  color: #fff;
+}
+
+header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header h1 {
+  font-size: 2rem;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+}
+
+nav ul li {
+  margin: 0 15px;
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  text-transform: uppercase;
+  padding: 10px;
+  border-radius: 5px;
+  transition: background 0.3s ease-in-out;
+  position: relative;
+}
+
+nav ul li a::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background-color: #ffffff;
+  bottom: -5px;
+  left: 0;
+  transform: scaleX(0);
+  transform-origin: bottom right;
+  transition: transform 0.3s ease;
+}
+
+/* Hover effect for navigation */
+nav ul li a:hover {
+  background: #444;
+}
+
+nav ul li a:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+/* Footer styles */
+footer {
+  background-color: #333;
+  color: #fff;
+  padding: 1rem;
+  text-align: center;
+  margin-top: 3rem;
+}
+
+/* ======================= Home Page Styles ======================== */
+
+/* Main content */
+main {
+  background-color: #333;
+}
+
+/* Home Page - Hero Section */
+.intro {
+  padding: 3rem 0;
+  text-align: center;
+}
+
+.intro h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.intro p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+.intro .btn {
+  padding: 1rem 2rem;
+  background-color: #2d3e50;
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.1rem;
+  border-radius: 8px;
+}
+
+.intro .btn:hover {
+  background-color: #1c2a37;
+}
+
+/* ======================= Charts Layout (Side by Side) ======================== */
+
+.charts-container {
+  display: flex; /* Flexbox for side-by-side layout */
+  justify-content: space-between;
+  gap: 2rem;
+  margin-top: 3rem; /* Adds space above the charts */
+}
+
+.chart {
+  background-color: #fff;
+  padding: 1.5rem;
+  border-radius: 8px;
+  width: 48%; /* Ensures charts are side by side */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Adds subtle shadow for depth */
+}
+
+.chart h2 {
+  color: #121212;
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+}
+
+.chart canvas {
+  width: 100%;
+  height: auto;
+  max-width: 500px; /* Keeps charts within a maximum width */
+  margin: 0 auto;
+}
+
+/* ======================= Dashboard Page Styles ======================== */
+
+/* Main content */
+.dashboard {
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem; /* Ensures spacing between content */
+  margin-bottom: 3rem;
+}
+
+/* ======================= Overview Section Styles ======================== */
+
+.overview {
+  margin-bottom: 3rem; /* Adds space below the overview section */
+}
+
+.overview h2 {
+  color: #121212;
+  font-size: 2rem;
+  margin-bottom: 2rem; /* Space below the heading */
+}
+
+/* Container for "Total Income" and "Total Expenses" side by side */
+.overview-stats {
+  display: flex;
+  justify-content: space-between; /* Aligns the two boxes side by side */
+  gap: 2rem; /* Adds space between the two boxes */
+  margin-bottom: 2rem; /* Adds space below the two boxes */
+}
+
+/* Each stat-box should take equal space */
+.stat-box {
+  background-color: #fff;
+  padding: 1.5rem;
+  border-radius: 8px;
+  flex: 1; /* Ensures the stat boxes take up equal space */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Adds subtle shadow for depth */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Ensures space is distributed evenly */
+  min-width: 0; /* Prevents overflow caused by content */
+}
+
+/* Align heading and amount vertically to be consistent */
+.stat-box h3 {
+  font-size: 1.4rem;
+  margin-bottom: 0.5rem; /* Space between heading and amount */
+  color: #121212;
+  line-height: 1.2; /* Ensures consistent vertical alignment */
+}
+
+.stat-box p {
+  font-size: 1.6rem;
+  font-weight: bold;
+  color: #4caf50;
+  margin: 0; /* Removes default margin to align the amount perfectly */
+}
+
+/* Chart Container for Dashboard */
+.chart-container {
+  background-color: #fff;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Adds shadow for visual depth */
+}
+
+/* =======================
+   Transactions Page Styles
+   ======================== */
+
+/* Transactions Table */
+.transactions table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 2rem;
+}
+
+.transactions table th,
+.transactions table td {
+  padding: 1rem;
+  border: 1px solid #ddd;
+}
+
+.transactions table th {
+  background-color: #f4f4f4;
+}
+
+/* Transactions Filters Section */
+.transactions .filters {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+}
+
+.transactions .filters label {
+  font-weight: bold;
+}
+
+.transactions .filters select,
+.transactions .filters input {
+  padding: 0.5rem;
+  font-size: 1rem;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  background-color: #fff;
+}
+
+.transactions .filters button {
+  padding: 0.75rem 1.5rem;
+  background-color: #2d3e50;
+  color: #fff;
+  font-size: 1rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.transactions .filters button:hover {
+  background-color: #1c2a37;
+}
+
+/* Transaction Details Section */
+.transaction-details {
+  background-color: #fff;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  margin-top: 2rem;
+}
+
+.transaction-details h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.transaction-details p {
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+}
+
+.transaction-details .btn {
+  padding: 1rem 2rem;
+  background-color: #2d3e50;
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.1rem;
+  border-radius: 8px;
+  display: inline-block;
+}
+
+.transaction-details .btn:hover {
+  background-color: #1c2a37;
+}
+
+/* Filters Section Styling */
+.filters {
+  padding: 20px;
+  background-color: #f8f9fa; /* Light background for the filter section */
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Soft shadow */
+}
+
+.filters h2 {
+  text-align: center;
+  font-size: 24px;
+  color: #333; /* Dark text color for the heading */
+  margin-bottom: 20px;
+}
+
+.filters label {
+  display: inline-block;
+  font-size: 16px;
+  margin-bottom: 8px;
+  color: #555; /* Slightly lighter color for labels */
+}
+
+/* Styling the select dropdowns */
+.filters select {
+  padding: 12px;
+  font-size: 16px;
+  margin: 10px 15px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  width: auto;
+  transition: all 0.3s ease-in-out;
+  background-color: #fff;
+  color: #333;
+}
+
+/* Select hover effect */
+.filters select:hover {
+  border-color: #007bff; /* Change border to blue on hover */
+}
+
+/* Select focus effect */
+.filters select:focus {
+  outline: none;
+  border-color: #0056b3; /* Darker blue on focus */
+  box-shadow: 0 0 5px rgba(0, 91, 255, 0.3); /* Soft blue glow on focus */
+}
+
+/* Style for Delete Buttons */
+.delete-btn {
+  background-color: #e74c3c;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  font-size: 14px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.delete-btn:hover {
+  background-color: #c0392b;
+  transform: scale(1.05);
+}
+
+.delete-btn:active {
+  background-color: #a93226;
+  transform: scale(0.98);
+}
+
+.delete-btn:focus {
+  outline: none;
+  box-shadow: 0 0 5px rgba(231, 76, 60, 0.7);
+}
+
+/* Totals section styling */
+.totals {
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 10px;
+  border: 1px solid #e0e0e0;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease-in-out;
+}
+
+.totals:hover {
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+.totals h2 {
+  font-size: 1.8em;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.totals-summary {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.total-item {
+  background-color: #f0f4f8;
+  border-radius: 8px;
+  padding: 15px;
+  flex: 1;
+  text-align: center;
+  transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out;
+}
+
+.total-item:hover {
+  transform: translateY(-5px);
+  background-color: #e6eff5;
+}
+
+.total-item h3 {
+  font-size: 1.2em;
+  font-weight: 600;
+  color: #555;
+  margin-bottom: 10px;
+}
+
+.total-item p {
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+/* Color for Income */
+#totalIncome {
+  color: #28a745; /* Green */
+}
+
+/* Color for Expense */
+#totalExpense {
+  color: #dc3545; /* Red */
+}
+
+/* Color for Savings */
+#totalSavings {
+  color: #007bff; /* Blue */
+}
+
+.savings-negative {
+  color: #dc3545; /* Red for negative savings */
+}
+
+/* =======================
+   Settings Page Styles
+   ======================== */
+
+/* General Section Styling */
+section {
+  background-color: #fff;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  margin-bottom: 2rem;
+}
+
+section h2 {
+  margin-bottom: 1.5rem;
+  font-size: 1.8rem;
+}
+
+/* Form Styling */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+/* Input Fields & Select */
+form input,
+form select {
+  padding: 0.8rem;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+
+/* Button for Settings */
+form button {
+  background-color: #2d3e50;
+  color: white;
+  padding: 1rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+form button:hover {
+  background-color: #1c2a37;
+}
+
+/* Log Out Button Styling */
+#logOutButton {
+  background-color: #ff4d4d;
+  color: white;
+  font-size: 16px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 20px;
+  width: 100%;
+}
+
+/* Hover and Active States */
+#logOutButton:hover {
+  background-color: #e60000;
+  transform: scale(1.05);
+}
+
+#logOutButton:active {
+  background-color: #cc0000;
+  transform: scale(0.98);
+}
+
+/* =======================
+   Mobile Support (Responsive) 
+   ======================== */
+
+/* Adjust the layout for small screens (max-width: 600px) */
+@media (max-width: 600px) {
+  /* Adjust layout for header */
+  header .container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  header h1 {
+    font-size: 1.8rem;
+  }
+
+  nav ul {
+    display: flex;
+    margin-top: 1rem;
+  }
+
+  nav ul li {
+    margin: 10px 0;
+  }
+
+  /* Adjust the layout of the main container */
+  .container {
+    padding: 0 1rem;
+  }
+
+  /* Hero Section */
+  .intro h2 {
+    font-size: 2rem;
+  }
+
+  .intro p {
+    font-size: 1rem;
+  }
+
+  .intro .btn {
+    padding: 0.8rem 1.5rem;
+    font-size: 1rem;
+  }
+
+  /* Charts Container */
+  .charts-container {
+    flex-direction: column; /* Stack charts vertically */
+    gap: 1rem;
+  }
+
+  .chart {
+    width: 100%; /* Full width for charts */
+  }
+
+  /* Dashboard Layout */
+  .dashboard {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .overview-stats {
+    flex-direction: column; /* Stack stats vertically */
+    gap: 1.5rem;
+  }
+
+  .stat-box {
+    width: 100%; /* Ensure stats take up full width */
+  }
+
+  /* Transactions Table */
+  /* Make the table container scrollable */
+  .transactions table {
+    width: 100%;
+    overflow-x: auto;
+    display: block; /* Allows horizontal scrolling */
+    white-space: nowrap; /* Prevents text from wrapping */
+  }
+
+  /* Ensure the table header stays on top if scrolling */
+  .transactions table thead {
+    display: table-header-group;
+  }
+
+  /* Adjust text alignment for readability on small screens */
+  .transactions table th,
+  .transactions table td {
+    text-align: center;
+  }
+
+  /* Adjust Filter Section */
+  .transactions .filters {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .transactions .filters select,
+  .transactions .filters input {
+    width: 100%; /* Full width for inputs */
+  }
+
+  /* Transaction Details */
+  .transaction-details {
+    padding: 1.2rem;
+  }
+
+  /* Totals Section */
+  .totals-summary {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .total-item {
+    width: 100%; /* Total items take full width */
+  }
+
+  /* Settings Form */
+  form {
+    gap: 1rem;
+  }
+
+  /* Log Out Button */
+  #logOutButton {
+    font-size: 14px;
+    width: 100%;
+  }
+}
+
+/* For slightly larger mobile screens (max-width: 768px) */
+@media (max-width: 768px) {
+  .container {
+    padding: 1rem;
+  }
+
+  nav ul {
+    display: flex; /* Stack navigation items on smaller tablets */
+  }
+
+  .stat-box {
+    width: 100%; /* Cards take up full width on smaller screens */
+    margin-bottom: 1rem;
+  }
+}
